@@ -6,14 +6,12 @@ class YuShuBook:
 
     @classmethod
     def search_by_isbn(cls, isbn):
-        print('------isbn', isbn)
         url = cls.isbn_url.format(isbn)
-        print('------url', url)
         result = HTTP.get(url)
         return result
     
     @classmethod
-    def search_by_keyword(self, keyword, count=15, start=0):
+    def search_by_keyword(cls, keyword, count=15, start=0):
         url = cls.keyword_url.format(keyword, count, start)
         result = HTTP.get(url)
         return result

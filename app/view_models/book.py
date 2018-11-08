@@ -4,7 +4,7 @@
 
 class BookViewModel:
     def __init__(self, data):
-        print('--BookViewModel-data-', data)
+        # print('--BookViewModel-data-', data)
         self.title = data['title']
         self.author = '、'.join(data['author'])
         self.publisher = data['publisher']
@@ -20,8 +20,8 @@ class BookCollection:
         self.keyword = ''
 
     def fill(self, yushu_book, keyword):
-        print('-----yushu_book-----', yushu_book)
-        print('-----keyword-----', keyword)
+        # print('-----yushu_book-----', yushu_book)
+        # print('-----keyword-----', keyword)
 
         self.total = yushu_book.total
         self.keyword = keyword

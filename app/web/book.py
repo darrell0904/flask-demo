@@ -1,4 +1,8 @@
-from flask import jsonify, request
+'''
+  Created By FJW in 20181021  
+'''
+
+from flask import jsonify, request, render_template
 from app.forms.book import SearchForm
 
 import json
@@ -38,7 +42,14 @@ def search():
 
         books.fill(yushu_book, q)
 
-        return json.dumps(books, default = lambda x: x.__dict__)
+        # return json.dumps(books, default = lambda x: x.__dict__)
         # return jsonify(result)
     else:
-        return jsonify(form.errors)
+        flash('搜索的关键字不符合要求，请重新输入关键字')
+        # return jsonify(form.errors)
+    return render_template('search_result.html', books=books)
+
+
+@web.route('/book/<isbn>/detail')
+def book_detail(isbn):
+    pass

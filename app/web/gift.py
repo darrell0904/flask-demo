@@ -8,3 +8,7 @@ from . import web
 def my_gifts():
     pass
 
+@web.route('/gifts/book/<isbn>')
+def save_to_gifts(isbn):
+    pass
+

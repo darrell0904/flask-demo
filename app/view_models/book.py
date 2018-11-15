@@ -9,6 +9,7 @@ class BookViewModel:
         self.author = '、'.join(data['author'])
         self.publisher = data['publisher']
         self.image = data['image']
+        self.isbn = data['isbn']
         self.pubdate = data['pubdate']
         self.summary = data['summary']
         self.pages = data['pages']

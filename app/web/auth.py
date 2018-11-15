@@ -1,12 +1,17 @@
 '''
   Created By FJW in 20181021  
 '''
-
+from flask import render_template
+from flask import request, flash, url_for
+from app.forms.auth import RegisterForm
 from . import web
 
-@web.route('/register', methods=['GET', 'POST'])
+@web.route('/register')
 def register():
-    pass
+    form = RegisterForm(request.form)
+    if request.method == 'POST' and form.validate():
+        pass
+    return render_template('auth/register.html', form=form)
 
 
 @web.route('/login', methods=['GET', 'POST'])

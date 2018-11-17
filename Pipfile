@@ -11,6 +11,8 @@ wtforms = "*"
 flask-sqlalchemy = "*"
 cymysql = "*"
 pymysql = "*"
+flask-login = "*"
+werkzeug = "*"
 
 [dev-packages]
 

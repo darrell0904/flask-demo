@@ -35,9 +35,8 @@ def login():
                 next = url_for('web.index')
             return redirect(next)
         else:
-            flash('账号不存在或密码错误', category='login_error')
+            flash('账号不存在或密码错误')
     return render_template('auth/login.html', form=form)
-
 
 @web.route('/reset/password', methods=['GET', 'POST'])
 def forget_password_request():

@@ -12,6 +12,7 @@ login_manager = LoginManager()
 
 def create_app():
     app = Flask(__name__)
+
     app.config.from_object('app.secure')
     app.config.from_object('app.setting')
     register_blueprint(app)

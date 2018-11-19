@@ -7,6 +7,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy import String, Unicode, DateTime, Boolean
 from sqlalchemy import SmallInteger, Integer, Float, Column
 
+from app import login_manager
+
 
 class User(UserMixin, Base):
     id = Column(Integer, primary_key=True)
@@ -32,3 +34,7 @@ class User(UserMixin, Base):
         if not self._password:
             return False
         return check_password_hash(self._password, raw)
+
+@login_manager.user_loader
+def get_user(uid):
+    return User.query.get(int(uid))

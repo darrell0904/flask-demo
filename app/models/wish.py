@@ -4,9 +4,10 @@
 from app.models.base import Base
 from sqlalchemy import Column, String, Integer, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
+from app.spider.yushu_book import YuShuBook
 
 class Wish(Base):
-    __tablename__ = 'gift'
+    __tablename__ = 'wish'
 
     id = Column(Integer, primary_key=True)
     uid = Column(Integer, ForeignKey('user.id'), nullable=False)

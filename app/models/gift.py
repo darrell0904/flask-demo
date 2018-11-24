@@ -4,6 +4,7 @@
 from app.models.base import Base
 from sqlalchemy import Column, String, Integer, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
+from app.spider.yushu_book import YuShuBook
 
 class Gift(Base):
     __tablename__ = 'gift'

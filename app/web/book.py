@@ -63,7 +63,7 @@ def book_detail(isbn):
      # 获取图书信息
     yushu_book = YuShuBook()
     yushu_book.search_by_isbn(isbn)
-    book = BookViewModel(yushu_book.books[0])
+    book = BookViewModel(yushu_book.first)
 
     if current_user.is_authenticated:
         # 如果未登录，current_user将是一个匿名用户对象

@@ -3,7 +3,7 @@
 '''
 from flask import render_template, redirect
 from flask import request, flash, url_for
-from flask_login import login_user
+from flask_login import login_user, logout_user, login_required
 from app.forms.auth import RegisterForm, LoginForm
 from app.models.user import User
 from . import web
@@ -54,8 +54,10 @@ def change_password():
 
 
 @web.route('/logout')
+@login_required
 def logout():
-    pass
+    logout_user()
+    return redirect(url_for('web.index'))
 
 
 @web.route('/register/confirm/<token>')
